@@ -1,0 +1,15 @@
+"""Tests for ValrExchangeData container."""
+
+from __future__ import annotations
+
+from bt_api_valr.exchange_data import ValrExchangeData
+
+
+class TestValrExchangeData:
+    """Tests for ValrExchangeData."""
+
+    def test_init(self):
+        """Test initialization."""
+        exchange = ValrExchangeData()
+
+        assert exchange.exchange_name == "VALR___SPOT"
