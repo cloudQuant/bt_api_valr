@@ -4,7 +4,6 @@ import re
 
 from bt_api_base.containers.exchanges.exchange_data import ExchangeData
 
-
 _FALLBACK_REST_PATHS = {
     "get_server_time": "GET /v1/public/time",
     "get_tick": "GET /v1/public/{symbol}/ticker",

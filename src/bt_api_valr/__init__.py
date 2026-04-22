@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 from bt_api_valr.errors import ValrErrorTranslator
 from bt_api_valr.exchange_data import ValrExchangeData, ValrExchangeDataSpot
