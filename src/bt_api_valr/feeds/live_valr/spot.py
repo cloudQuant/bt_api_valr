@@ -29,21 +29,15 @@ class ValrRequestDataSpot(ValrRequestData):
         path, params, extra = self._get_depth(symbol, count, extra_data, **kwargs)
         return self.request(path, params, extra_data=extra)
 
-    async def async_get_depth(
-        self, symbol: Any, count: int = 20, extra_data: Any = None, **kwargs: Any
-    ):
+    async def async_get_depth(self, symbol: Any, count: int = 20, extra_data: Any = None, **kwargs: Any):
         path, params, extra = self._get_depth(symbol, count, extra_data, **kwargs)
         return await self.async_request(path, params, extra_data=extra)
 
-    def get_kline(
-        self, symbol: Any, period: Any, count: int = 20, extra_data: Any = None, **kwargs: Any
-    ):
+    def get_kline(self, symbol: Any, period: Any, count: int = 20, extra_data: Any = None, **kwargs: Any):
         path, params, extra = self._get_kline(symbol, period, count, extra_data, **kwargs)
         return self.request(path, params, extra_data=extra)
 
-    async def async_get_kline(
-        self, symbol: Any, period: Any, count: int = 20, extra_data: Any = None, **kwargs: Any
-    ):
+    async def async_get_kline(self, symbol: Any, period: Any, count: int = 20, extra_data: Any = None, **kwargs: Any):
         path, params, extra = self._get_kline(symbol, period, count, extra_data, **kwargs)
         return await self.async_request(path, params, extra_data=extra)
 

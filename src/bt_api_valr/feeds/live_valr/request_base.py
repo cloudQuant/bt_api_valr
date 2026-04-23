@@ -38,9 +38,7 @@ class ValrRequestData(Feed):
         if not self.api_secret:
             return ""
         sign_str = f"{timestamp}{verb.upper()}{path}{body}"
-        return hmac.new(
-            self.api_secret.encode("utf-8"), sign_str.encode("utf-8"), hashlib.sha512
-        ).hexdigest()
+        return hmac.new(self.api_secret.encode("utf-8"), sign_str.encode("utf-8"), hashlib.sha512).hexdigest()
 
     def _get_headers(self, method: str = "GET", request_path: str = "") -> dict[str, str]:
         headers = {"Content-Type": "application/json"}
@@ -156,9 +154,7 @@ class ValrRequestData(Feed):
         )
         return path, None, extra_data
 
-    def _get_kline(
-        self, symbol: str, period: str, count: int = 20, extra_data: Any = None, **kwargs: Any
-    ):
+    def _get_kline(self, symbol: str, period: str, count: int = 20, extra_data: Any = None, **kwargs: Any):
         path = self._params.get_rest_path("get_kline", symbol=self._params.get_symbol(symbol))
         extra_data = extra_data or {}
         extra_data.update(

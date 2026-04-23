@@ -12,9 +12,7 @@ if TYPE_CHECKING:
     from bt_api_base.registry import ExchangeRegistry
 
 
-def register_plugin(
-    registry: type[ExchangeRegistry], runtime_factory: type[GatewayRuntimeRegistrar]
-) -> PluginInfo:
+def register_plugin(registry: type[ExchangeRegistry], runtime_factory: type[GatewayRuntimeRegistrar]) -> PluginInfo:
     register_valr(registry)
     return PluginInfo(
         name="bt_api_valr",
